@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+       body {
+            background-color: #F8F9FA;
+            background-image: url('images1/backgroundlogin.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .demo{
+            
+            background-color: #3a3b3c;
+            height: 60px;
+            color: #F8F9FA;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .demo button{
+            margin-left: 40px;
+        }
+
+        .card {
+            border-radius: 15px;
+            border: none;
+        }
+
+    .btn {
+        background-color: #3a3b3c;
+        border: none;
+        color: #F8F9FA;
+    }
+
+        .form-check-input:checked {
+            background-color: #3a3b3c;
+            border-color: #3a3b3c;
+        }
+
+        .logo {
+            width: 100px;
+            
+        }
+
+        input::placeholder {
+            color: #3a3b3c;
+        }
+    </style>
+
+</head>
+
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet">
+    <div class="container animate__animated animate__zoomIn d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card p-4" style="width: 25rem;">
+            <div class="text-center mb-4">
+                <img src="images1/logo.png" alt="Logo" class="logo">
+                <h2 class="m-0">Welcome!</h2>
+            </div>
+            <div class="container-fluid">
+                <div class="row demo">
+                    <div class="col-md-6">
+
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#signIn" type="button"
+                            role="tab" aria-controls="signIn" aria-selected="true"
+                            ><a href="login.html" class="text-light">Sign In</a></button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#signUp" type="button" role="tab"
+                            aria-controls="signUp" aria-selected="false" style="text-decoration: underline;"><a href="signup.html" class="text-light">Sign Up</a></button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="signIn-tab">
+                    <form>
+                        <div class="mb-3">
+                            <label for="Name" class="form-label m-2">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label m-2">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter Your Email">
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="password" class="form-label m-2">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" placeholder="Enter Your Password">
+                                <span class="input-group-text" id="togglePassword" style="cursor: pointer;">
+                                    <i class="bi bi-eye-slash-fill"></i>
+                                </span>
+                            </div>
+                        </div>
+                        
+
+                        <button type="submit" class="btn btn-hover btn-dark w-100">Sign Up</button>
+                    </form>
+                </div>
+               <p style="text-align: center; margin: 20px;"> By continiuing Sign Up you agree to the following Terms & Condition without reservation </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/letteranimation.min.js"></script>
+</body>
+
+</html>

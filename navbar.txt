@@ -1,0 +1,46 @@
+  <!-- nav start -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #3a3b3c;">
+        <div class="container-fluid">
+            <img style="height: 60px; width: 60px;" class="me-1 ms-2" src="images/carwhite-removebg-preview.png"
+                alt="Image">
+            <a class="navbar-brand ms-0" style="color: #fefcfb;" href="#">Car Buddy</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Location" aria-label="Location">
+                <input class="btn" style="background-color: #fefcfb; color: #3a3b3c;" type="submit" value="Search">
+            </form>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mx-5" style="text-align: center;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" style="color: #fefcfb;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: #fefcfb;">About</a>
+                    </li>
+                    <!-- Dropdown menu for services -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color: #fefcfb;">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" style="text-align: center;">
+                            <li><a class="dropdown-item" href="#" style="color: #fefcfb; background-color: #032028;">Purchase</a></li>
+                            <li><a class="dropdown-item" href="#" style="color: #fefcfb; background-color: #032028;">Sell</a></li>
+                            <li><a class="dropdown-item" href="#" style="color: #fefcfb; background-color: #032028;">Rent</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: #fefcfb;">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: #fefcfb;">Log In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- nav end -->

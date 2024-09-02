@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lobster&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+
+
+
+    <title>Car Buddy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #3a3b3c;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .vehicle-card {
+            border-radius: 15px;
+            background-color: #3a3b3c;
+            color: #f8f9fa;
+            padding: 20px;
+            margin: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .vehicle-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .vehicle-card h5 {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #f8f9fa;
+        }
+
+        .vehicle-card p {
+            color: #f8f9fa;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        .vehicle-card .btn {
+            background-color: #f8f9fa;
+            color: #3a3b3c;
+            border-radius: 25px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .vehicle-card:hover {
+            transform: scale(1.05);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            color: #3a3b3c;
+        }
+
+        .choose {
+            color: #3a3b3c;
+            margin: 3;
+            padding: 2;
+            justify-content: center;
+        }
+
+        .map {
+            height: 350px;
+            width: 700px;
+            opacity: 75%;
+        }
+
+        .car-section {
+            background-color: #3a3b3c;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .car-item {
+            width: 200px;
+            height: 200px;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin: 0 15px;
+        }
+
+        .card-body:hover {
+            animation: animate__jackInTheBox 2s;
+        }
+
+        .familyimage {
+            height: 150px;
+            width: 600px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .qrcode {
+            height: 150px;
+            width: 170px;
+            margin: 20px;
+        }
+
+        .scanner {
+            margin: 20px;
+            text-align: center;
+            color: #000000;
+
+        }
+
+        .scannertxt {
+            text-align: center;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* .image {
+            width: 70%;
+            height: 70%;
+           justify-content: center; 
+            border-radius: 50%;
+            object-fit: cover;
+
+        }
+
+        .car-item p {
+            margin-top: 15px;
+            font-size: 1rem;
+            font-weight: bold;
+        } */
+
+        .image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .car-item {
+            width: 200px;
+            /* Adjust this to your desired circle diameter */
+            height: 200px;
+            /* Adjust this to your desired circle diameter */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            position: relative;
+        }
+
+        .content {
+            position: absolute;
+            /* bottom: 10px; */
+            width: 100%;
+            text-align: center;
+            font-size: 1.2em;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 0;
+        }
+
+
+        @media (max-width: 768px) {
+            .car-section {
+                flex-direction: column;
+            }
+
+            .car-item {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- nav start -->
+    <nav class="navbar navbar-expand-lg " style="background-color: #3a3b3c;">
+        <div class="container-fluid">
+            <img style="height: 60px; width: 60px;" class="me-1 ms-2" src="images1/carwhite-removebg-preview.png"
+                alt="Image">
+            <a class="navbar-brand ms-0" style="color: #fefcfb;" href="#">Car Buddy</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Location" aria-label="Location">
+                <input class="btn" style="background-color: #fefcfb; color: #3a3b3c;" type="submit" value="Search">
+            </form>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mx-5" style="text-align: center;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" style="color: #fefcfb;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html" style="color: #fefcfb;">About</a>
+                    </li>
+                    <!-- Dropdown menu for services -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color: #fefcfb;">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" style="text-align: center;">
+                            <li><a class="dropdown-item" href="purchase.html"
+                                    style="color: #fefcfb; background-color: #032028;">Purchase</a></li>
+                            <li><a class="dropdown-item" href=""
+                                    style="color: #fefcfb; background-color: #032028;">Sell</a></li>
+                            <li><a class="dropdown-item" href="rent.html"
+                                    style="color: #fefcfb; background-color: #032028;">Rent</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat.html" style="color: #fefcfb;">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" style="color: #fefcfb;">Log In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- nav end -->
+
+    <!-- text on image -->
+    <div class="container-fluid">
+        <div class="image-overlay-container position-relative">
+            <img class="mx-auto d-block mb-2 opacity-75 animate__animated animate__zoomIn" src="images1/background21.jpg" alt="Image" style="width: 100%;"
+                height="750vh;">
+            <div class="overlay-text position-absolute top-0 start-50 text-center me-2" style="margin-top: 8vh;">
+                <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet">
+                <h1 class="animate__animated animate__pulse"
+                    style="color: #000000; font-family: 'DM Serif Text', serif;">Find Your Perfect car Here.</h1>
+                <p style="color: #000000; font-family: 'DM Serif Text', serif;"> Car Buddy is your ultimate destination
+                    for discovering, comparing, and purchasing the perfect car. Explore our
+                    wide selection of vehicles, expert reviews, and tailored advice to drive your passion for the road.
+                </p>
+                <a class="btn" style="background-color: #032028; color: #fefcfb;" href="explore.html"
+                    role="button">Explore More</a>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Today's offer vala card -->
+
+    <div class="container">
+        <h2 class="section-title">Today's Offer</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="vehicle-card">
+                    <img src="images1/Carrsszs.jpeg" alt="Grand Cherokee SRT">
+                    <h5>Grand Cherokee SRT</h5>
+                    <p>₹ 93.70 Lakh*</p>
+                    <a href="#" class="btn">Know More</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="vehicle-card">
+                    <img src="images1/BMW Rendered in Widebody Guise, Looks Enticing.jpeg" alt="Grand Cherokee">
+                    <h5>Grand Cherokee</h5>
+                    <p>₹ 93.70 Lakh*</p>
+                    <a href="#" class="btn">Know More</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="vehicle-card">
+                    <img src="images1/Carrsszs.jpeg" alt="Compass">
+                    <h5>Compass</h5>
+                    <p>₹ 93.70 Lakh*</p>
+                    <a href="#" class="btn">Know More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- offer card end -->
+
+
+
+    <!-- why choose us -->
+    <!-- card start from here -->
+    <div class="container-fluid">
+        <h2 class="choose" style="margin-top: 10px;">Why choose us?</h2>
+        <p class="choose">Diverse vehicle selection tailored to your needs, transparent pricing with unbeatable value,
+            and exceptional service for a seamless and satisfying experience.</p>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3 my-2 p-2">
+                <div class="card h-100">
+                    <i class="bi bi-box2-heart ms-4" style="font-size: 24px;"></i>
+                    <div class="card-body animate__animated animate__jackInTheBox">
+                        <h5 class="card-title">Wide Selection of Vehicles</h5>
+                        <p class="card-text">We offer an extensive range of vehicles, from budget-friendly options to
+                            luxury models, ensuring you find the perfect car that fits your needs and lifestyle.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 my-2 p-2">
+                <div class="card h-100">
+                    <i class="bi bi-emoji-heart-eyes ms-4" style="font-size: 24px;"></i>
+                    <div class="card-body animate__animated animate__jackInTheBox">
+                        <h5 class="card-title">User-Friendly Experience</h5>
+                        <p class="card-text">Our website is designed with detailed car comparisons and easy-to-use
+                            search filters to help you quickly find the vehicle you're looking for.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 my-2 p-2">
+                <div class="card h-100">
+                    <i class="bi bi-info-circle ms-4" style="font-size: 24px;"></i>
+                    <div class="card-body animate__animated animate__jackInTheBox">
+                        <h5 class="card-title">Comprehensive Information</h5>
+                        <p class="card-text">We provide in-depth details about each vehicle, including specifications,
+                            features, and customer reviews that you need to make an informed decision.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 my-2 p-2">
+                <div class="card h-100">
+                    <i class="bi bi-wrench-adjustable-circle ms-4" style="font-size: 24px;"></i>
+                    <div class="card-body animate__animated animate__jackInTheBox">
+                        <h5 class="card-title">Trusted Customer Service</h5>
+                        <p class="card-text">Our dedicated support team is available to assist you at every step, from
+                            selecting the right car to finalizing your purchase, ensuring a seamless and stress-free
+                            experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- card end here -->
+
+    <!-- car image in round  -->
+
+    <div class="car-section">
+        <div class="car-item">
+            <img class="image" src="images1/background4.jpg" alt="Buy">
+            <div class="content">
+                <p>Buy Car</p>
+            </div>
+        </div>
+        <div class="car-item">
+            <img class="image" src="images1/background10.jpg" alt="Sell">
+            <div class="content">
+                <p>Sell Car</p>
+            </div>
+        </div>
+        <div class="car-item">
+            <img class="image" src="images1/background7.jpg" alt="Service">
+            <div class="content">
+                <p>Services</p>
+            </div>
+        </div>
+        <div class="car-item">
+            <img class="image" src="images1/background6.jpg" alt="Financing Options">
+            <div class="content">
+                <p>Payments</p>
+            </div>
+        </div>
+    </div>
+    <!-- car image end -->
+
+
+
+    <!-- family picture and scanner container -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="familyimage" src="images1/scannerimage-removebg-preview.png" alt="scannerimage">
+            </div>
+            <div class="col-md-3">
+                <h2 class="scanner">Drive smart</h2>
+                <h3 class="scanner"> With Our App</h3>
+                <p class="scannertxt">Unlock Exclusive discounts, special offers, and price drops every day</p>
+            </div>
+            <div class="col-md-3">
+                <img class="qrcode"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/800px-QR_code_for_mobile_English_Wikipedia.svg.png"
+                    alt="QR Code">
+            </div>
+        </div>
+    </div>
+
+    <!-- scanner container end -->
+
+    <!-- some car pictures -->
+    <div>
+        <div class="container-fluid">
+            <div class="row" style="background-color: #3a3b3c; color: #f8f9fa;">
+                <div class="col-md-12">
+                    <h2 class="text-center my-2" style="padding: 10px;">Select Your Car</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid mt-2 mb-1" style="background-color: #3a3b3c;">
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <img class="img-fluid"
+                        src="images1/Download_premium_png_of_Side_view_of_a_white_sedan_in_3D_about_car__car_png__sedan__car_side_view__and_sedan_png_563795-removebg-preview.png"
+                        alt="Image">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img class="img-fluid"
+                        src="images1/Premium_Photo___White_premium_city_crossover_on_a_white_background-removebg-preview.png"
+                        alt="Image">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img class="img-fluid" src="images1/Monte_o_seu_SW4___Toyota-removebg-preview.png" alt="Image">
+                </div>
+                <div class="col-6 col-md-3">
+                    <img class="img-fluid" src="images1/caress-removebg-preview.png" alt="Image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Location -->
+
+    <div class="conatiner">
+        <div class="row justify-content-center m-3">
+            <div class="col-md-12">
+                <iframe class="map"
+                    src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d117504.62108341683!2d72.47426609514898!3d23.02305957149462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x395e85558e268fcd%3A0xe5ba6fa8382060ed!2s304%2C%20Shitiratna%20Complex%2CNear%20Panchvati%20Circle%2C%20Chimanlal%20Girdharlal%20Rd%2C%20next%20to%20Radisson%20blu%20hotel%2C%20Ahmedabad%2C%20Gujarat%20380006!3m2!1d23.0230809!2d72.55666769999999!5e0!3m2!1sen!2sin!4v1724485877135!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-muted" style="background-color: #3a3b3c;">
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-3">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto my-3">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4" style="color: #fefcfb;">
+                            <i class="fas fa-gem me-3"></i>Company name
+                        </h6>
+                        <p style="color: #fefcfb;">
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto my-3">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4" style="color: #fefcfb;">
+                            AVAILABLE CARS
+                        </h6>
+                        <p style="color: #fefcfb;">
+                            <a href="cardetail.html#maybach" class="text-reset">SUV</a>
+                        </p>
+                        <p style="color: #fefcfb;">
+                            <a href="cardetail.html#Mercedes Benz" class="text-reset">SEDAN</a>
+                        </p>
+                        <p style="color: #fefcfb;">
+                            <a href="purchase.html#luxury" class="text-reset">LUXURY</a>
+                        </p>
+                        <p style="color: #fefcfb;">
+                            <a href="cardetail.html#aston-martin" class="text-reset">SPORTS</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto my-3">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4" style="color: #fefcfb;">
+                            Useful links
+                        </h6>
+                        <p style="color: #fefcfb;">
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p style="color: #fefcfb;">
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p style="color: #fefcfb;">
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p style="color: #fefcfb;">
+                            <a href="aboutus.html" class="text-reset">About</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 my-3">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4" style="color: #fefcfb;">Contact</h6>
+                        <p style="color: #fefcfb;"><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p style="color: #fefcfb;">
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p style="color: #fefcfb;"><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p style="color: #fefcfb;"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+    </footer>
+    <!-- Footer -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/letteranimation.min.js"></script>
+
+</body>
+
+</html>

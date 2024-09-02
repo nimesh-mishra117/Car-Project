@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> chat page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            background-image: url(images/background10.jpg);
+            background-size: cover;
+        }
+
+        .chat-card {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-card .card-header {
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 10px 15px;
+        }
+
+        .chat-card .chat-body {
+            background-color: #fff;
+            height: 400px;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .chat {
+            max-width: 70%;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+
+        .chat.bg-light {
+            background-color: #f1f1f1;
+            border-radius: 20px 20px 20px 0;
+        }
+
+        .chat.bg-secondary {
+            background-color: #c77b7b;
+            border-radius: 20px 20px 0 20px;
+        }
+
+        .chat-card .card-footer {
+            background-color: #fff;
+            border-top: 1px solid #e0e0e0;
+            padding: 10px 15px;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+
+        .chat-card {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-card .card-header {
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 10px 15px;
+        }
+
+        .chat-card .chat-body {
+            background-color: #fff;
+            height: 400px;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .chat {
+            max-width: 70%;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+
+        .chat.bg-light {
+            background-color: #f1f1f1;
+            border-radius: 20px 20px 20px 0;
+        }
+
+        .chat.bg-secondary {
+            background-color: #c77b7b;
+            border-radius: 20px 20px 0 20px;
+        }
+
+        .chat-card .card-footer {
+            background-color: #fff;
+            border-top: 1px solid #e0e0e0;
+            padding: 10px 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- nav start -->
+    <nav class="navbar navbar-expand-lg " style="background-color: #3a3b3c;">
+        <div class="container-fluid">
+            <img style="height: 60px; width: 60px;" class="me-1 ms-2" src="images1/carwhite-removebg-preview.png"
+                alt="Image">
+            <a class="navbar-brand ms-0" style="color: #fefcfb;" href="#">Car Buddy</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Location" aria-label="Location">
+                <input class="btn" style="background-color: #fefcfb; color: #3a3b3c;" type="submit" value="Search">
+            </form>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mx-5" style="text-align: center;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html" style="color: #fefcfb;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html" style="color: #fefcfb;">About</a>
+                    </li>
+                    <!-- Dropdown menu for services -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color: #fefcfb;">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" style="text-align: center;">
+                            <li><a class="dropdown-item" href="purchase.html"
+                                    style="color: #fefcfb; background-color: #032028;">Purchase</a></li>
+                            <li><a class="dropdown-item" href=""
+                                    style="color: #fefcfb; background-color: #032028;">Sell</a></li>
+                            <li><a class="dropdown-item" href="rent.html"
+                                    style="color: #fefcfb; background-color: #032028;">Rent</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: #fefcfb;">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" style="color: #fefcfb;">Log In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- nav end -->
+
+
+    <div class="container mt-4">
+        <div class="card chat-card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <img src="images2/chatimage.jpg" alt="Profile" class="rounded-circle me-2" width="50">
+                    <div>
+                        <h6 class="mb-0">Car Buddy</h6>
+                        <small class="text-success">Online</small>
+                    </div>
+                </div>
+                <div>
+                    <i class="bi bi-telephone me-3"></i>
+                    <i class="bi bi-camera-video me-3"></i>
+                    <i class="bi bi-three-dots-vertical"></i>
+                </div>
+            </div>
+            <div class="card-body chat-body">
+                <div class="d-flex mb-3">
+                    <div class="chat bg-light">
+                        <p class="mb-0">Hello, How can I help you?</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mb-3">
+                    <div class="chat bg-secondary text-white">
+                        <p class="mb-0">Hello, vaibhav padvalkar</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mb-3">
+                    <div class="chat bg-secondary text-white">
+                        <p class="mb-0">I want more information.<br>about car buddy.</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-3">
+                    <div class="chat bg-light">
+                        <p class="mb-0">What type of information you want to know?</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mb-3">
+                    <div class="chat bg-secondary text-white">
+                        <p class="mb-0">which faclility you to your customer</p>
+                    </div>
+                </div>
+                <small class="text-muted d-block text-end">10:30 am</small>
+            </div>
+            <div class="card-footer" style="margin-top: 150px;">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Leave your Experience...">
+                    <button class="btn btn-secondary"><i class="bi bi-send"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-muted" style="background-color: #3a3b3c;">
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-3">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto my-3">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4" style="color: #fefcfb;">
+                            <i class="fas fa-gem me-3"></i>Company name
+                        </h6>
+                        <p style="color: #fefcfb;">
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto my-3">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4" style="color: #fefcfb;">
+                            AVAILABLE CARS
+                        </h6>
+                        <p style="color: #fefcfb;">
+                            <a href="cardetail.html#maybach" class="text-reset">SUV</a>
+                        </p>
+                        <p style="color: #fefcfb;">
+                            <a href="cardetail.html#Mercedes Benz" class="text-reset">SEDAN</a>
+                        </p>
+                        <p style="color: #fefcfb;">
+                            <a href="purchase.html#luxury" class="text-reset">LUXURY</a>
+                        </p>
+                        <p style="color: #fefcfb;">
+                            <a href="cardetail.html#aston-martin" class="text-reset">SPORTS</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto my-3">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4" style="color: #fefcfb;">
+                            Useful links
+                        </h6>
+                        <p style="color: #fefcfb;">
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p style="color: #fefcfb;">
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p style="color: #fefcfb;">
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p style="color: #fefcfb;">
+                            <a href="aboutus.html" class="text-reset">About</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 my-3">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4" style="color: #fefcfb;">Contact</h6>
+                        <p style="color: #fefcfb;"><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p style="color: #fefcfb;">
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p style="color: #fefcfb;"><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p style="color: #fefcfb;"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+    </footer>
+    <!-- Footer -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
