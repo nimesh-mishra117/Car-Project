@@ -6,4 +6,4 @@
 ![screencapture-127-0-0-1-5500-signup-html-2024-09-02-13_07_32](https://github.com/user-attachments/assets/68338039-a75f-4620-8a64-31893ef3f790)
 ![screencapture-127-0-0-1-5500-cardetail-html-2024-09-02-13_08_56](https://github.com/user-attachments/assets/7b00f2de-2a37-4997-9a82-85ac54f47c78)
 
-![Uploading screencapture-127-0-0-1-5500-purchase-html-2024-09-02-13_04_16.png…]()
+![screencapture-127-0-0-1-5500-purchase-html-2024-09-02-13_04_16](https://github.com/user-attachments/assets/eac3e0d9-6dda-4648-86cb-3a7f67890b9d)
